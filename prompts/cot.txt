@@ -1,0 +1,106 @@
+You are an expert in organic reaction mechanisms.
+
+## Task
+
+Given the following information:
+
+* **Reactants (SMILES)**: {{ reactants_smiles }}
+* **Products (SMILES)**: {{ products_smiles }}
+* **Reaction Conditions**: {{ conditions }}
+
+Your task is to write a **step-by-step** organic chemistry reaction mechanism as a **JSON list**. First, **think step by step** to plan a plausible mechanism. Then, surround the answer with [ANSWER] and [/ANSWER] tags.
+
+### For each step, include:
+
+1. `"step"` – the step number (starting from 1)
+2. `"type"` – the reaction type, selected **exactly** from the predefined list below
+3. `"subtype"` – the reaction subtype, selected **exactly** from the predefined list below (the string must match the `"subtype"` field precisely)
+4. `"intermediate_smiles"` – a valid SMILES string representing the intermediate at this step (must be parsable by RDKit)
+
+### Predefined list:
+
+[
+  {{"type": "addition", "subtype": "nucleophilic\_addition", "description": "Nucleophile attacks an electrophilic center"}},
+  {{"type": "addition", "subtype": "electrophilic\_addition", "description": "Electrophile adds to an electron-rich system (e.g., alkene)"}},
+  {{"type": "addition", "subtype": "radical\_addition", "description": "Radical adds to a π-bond system"}},
+  {{"type": "addition", "subtype": "oxidative\_addition", "description": "A covalent bond breaks upon reacting with a low-valent metal, and the two atoms from the broken bond simultaneously attach to the metal"}},
+  {{"type": "elimination", "subtype": "proton\_elimination", "description": "Only used in E1. β-H proton of carbocation is abstracted to form a double bond"}},
+  {{"type": "elimination", "subtype": "leaving\_group\_elimination", "description": "Leaving group departs simultaneously with double bond formation"}},
+  {{"type": "elimination", "subtype": "radical\_elimination", "description": "Radical eliminates a small fragment to form a π-bond"}},
+  {{"type": "elimination", "subtype": "reductive\_elimination", "description": "The reverse reaction of oxidative addition"}},
+  {{"type": "substitution", "subtype": "nucleophilic\_substitution", "description": "Nucleophile replaces a leaving group"}},
+  {{"type": "substitution", "subtype": "electrophilic\_substitution", "description": "Electrophile replaces a hydrogen atom on an aromatic ring"}},
+  {{"type": "substitution", "subtype": "radical\_substitution", "description": "Radical replaces a group within a σ-bond"}},
+  {{"type": "rearrangement", "subtype": "1,2-shift", "description": "1,2-alkyl or hydride shift within a carbocation"}},
+  {{"type": "rearrangement", "subtype": "radical\_rearrangement", "description": "Radical migrates to a different position"}},
+  {{"type": "rearrangement", "subtype": "migratory insertion", "description": "One ligand migrates and inserts itself into the bond between the metal and the other ligand"}},
+  {{"type": "proton\_transfer", "subtype": "acid\_base\_proton\_transfer", "description": "Proton migrates between a donor and an acceptor, including keto-enol tautomerization"}},
+  {{"type": "electron\_transfer", "subtype": "single\_electron\_transfer", "description": "Single electron moves from donor to acceptor"}},
+  {{"type": "radical", "subtype": "radical\_initiation", "description": "Generation of radicals (e.g., by light, heat)"}},
+  {{"type": "radical", "subtype": "radical\_propagation", "description": "Radical continuously generates new radicals"}},
+  {{"type": "radical", "subtype": "radical\_termination", "description": "Two radicals combine to terminate chain reactions"}},
+  {{"type": "radical", "subtype": "radical\_coupling", "description": "Two radicals form a new bond directly (e.g., C–C or C–N)"}},
+  {{"type": "pericyclic", "subtype": "cycloaddition", "description": "Two π-systems combine to form a ring (e.g., Diels–Alder)"}},
+  {{"type": "pericyclic", "subtype": "cycloreversion", "description": "The reverse reaction of cycloaddition"}},
+  {{"type": "pericyclic", "subtype": "electrocyclization", "description": "Ring closure or opening via conjugated π-system rotation"}},
+  {{"type": "pericyclic", "subtype": "sigmatropic\_rearrangement", "description": "Migration of σ-bond across a π-system (e.g., \[3,3]-Claisen)"}},
+  {{"type": "pericyclic", "subtype": "group\_transfer", "description": "Group is transferred via concerted cyclic pathway"}},
+  {{"type": "pericyclic", "subtype": "ene\_reaction", "description": "Transfer of an allylic hydrogen and formation of a new σ-bond"}},
+  {{"type": "pericyclic", "subtype": "cheletropic\_reaction", "description": "Two new bonds formed to the same atom (subset of cycloaddition)"}},
+  {{"type": "cleavage", "subtype": "heterolytic\_cleavage", "description": "Only used in SN1 and E1. Bond breaks with both electrons going to one fragment (ions formed), including decarboxylation in some condition"}},
+  {{"type": "cleavage", "subtype": "homolytic\_cleavage", "description": "Only used in radical formation. Bond breaks evenly with one electron to each fragment (radicals formed)"}},
+  {{"type": "coordination", "subtype": "coordination", "description": "A ligand molecule attaches to a central metal atom. Lone pair coordinates with an empty orbital"}},
+  {{"type": "dissociation", "subtype": "dissociation", "description": "A ligand molecule detaches from a central metal atom"}}
+]
+
+### Answer format:
+
+In answer, write only the **valid JSON** in the format below.
+Do **not** include any explanatory text, code blocks, or markdown syntax.
+[
+{{ "step": 1, "type": "...", "subtype": "...", "intermediate\_smiles": "..." }},
+...
+]
+
+### Example
+
+**Input**:
+{
+  "reactants\_smiles": \["CC=O", "CC=O"],
+  "products\_smiles": \["CC(O)CC=O"],
+  "conditions": "Base"
+}
+
+**Expected output**:
+[
+  {
+  "step": 1,
+  "rationale": "The base abstracts the relatively acidic α-hydrogen due to resonance stabilization of the resulting enolate by the adjacent carbonyl group.",
+  "type": "proton_transfer",
+  "subtype": "acid_base_proton_transfer",
+  "intermediate_smiles": "[CH2-]C=O",
+  },
+  {
+  "step": 2,
+  "rationale": "The nucleophilic enolate carbon attacks the electrophilic carbonyl carbon of another molecule, driven by the strong polarization of the C=O bond.",
+  "type": "addition",
+  "subtype": "nucleophilic_addition",
+  "intermediate_smiles": "CC([O-])CC=O",
+  },
+  {
+  "step": 3,
+  "rationale": "The alkoxide intermediate is protonated by solvent or conjugate acid, yielding the stable β-hydroxy carbonyl product."
+  "type": "proton_transfer",
+  "subtype": "acid_base_proton_transfer",
+  "intermediate_smiles": "CC(O)CC=O",
+  }
+]
+
+### Input for you
+{
+  "reactants_smiles": "{ reactants_smiles }",
+  "products_smiles": "{ products_smiles }",
+  "conditions": "{ conditions }"
+}
+
+### Now, generate your output!

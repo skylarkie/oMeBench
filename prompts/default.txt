@@ -1,0 +1,100 @@
+You are an expert in organic reaction mechanisms.
+
+## Task
+Given the following information:
+- **Reactants (SMILES)**: {{ reactants_smiles }}
+- **Products (SMILES)**: {{ products_smiles }}
+- **Reaction Conditions**: {{ conditions }}
+
+Your task is to write a **step-by-step** organic chemistry reaction mechanism as a **JSON list**. Surround the answer with [ANSWER] and [/ANSWER] tags.
+
+### For each step, include:
+1. `"step"` – the step number (starting from 1)
+2. `"type"` – the reaction type, selected **exactly** from the predefined list below
+3. `"subtype"` – the reaction subtype, selected **exactly** from the predefined list below (the string must match the `"subtype"` field precisely)
+4. `"intermediate_smiles"` – a valid SMILES string representing the intermediate at this step (must be parsable by RDKit)
+
+### Predefined list:
+[
+  {{"type": "addition", "subtype": "nucleophilic_addition", "description": "Nucleophile attacks an electrophilic center"}},
+  {{"type": "addition", "subtype": "electrophilic_addition", "description": "Electrophile adds to an electron-rich system (e.g., alkene)"}},
+  {{"type": "addition", "subtype": "radical_addition", "description": "Radical adds to a π-bond system"}},
+  {{"type": "addition", "subtype": "oxidative_addition", "description": "A covalent bond breaks upon reacting with a low-valent metal, and the two atoms from the broken bond simultaneously attach to the metal"}},
+  {{"type": "elimination", "subtype": "proton_elimination", "description": "Only used in E1. β-H proton of carbocation is abstracted to form a double bond"}},
+  {{"type": "elimination", "subtype": "leaving_group_elimination", "description": "Leaving group departs simultaneously with double bond formation"}},
+  {{"type": "elimination", "subtype": "radical_elimination", "description": "Radical eliminates a small fragment to form a π-bond"}},
+  {{"type": "elimination", "subtype": "reductive_elimination", "description": "The reverse reaction of oxidative addition"}},
+  {{"type": "substitution", "subtype": "nucleophilic_substitution", "description": "Nucleophile replaces a leaving group"}},
+  {{"type": "substitution", "subtype": "electrophilic_substitution", "description": "Electrophile replaces a hydrogen atom on an aromatic ring"}},
+  {{"type": "substitution", "subtype": "radical_substitution", "description": "Radical replaces a group within a σ-bond"}},
+  {{"type": "rearrangement", "subtype": "1,2-shift", "description": "1,2-alkyl or hydride shift within a carbocation"}},
+  {{"type": "rearrangement", "subtype": "radical_rearrangement", "description": "Radical migrates to a different position"}},
+  {{"type": "rearrangement", "subtype": "migratory insertion", "description": "One ligand migrates and inserts itself into the bond between the metal and the other ligand"}},
+  {{"type": "proton_transfer", "subtype": "acid_base_proton_transfer", "description": "Proton migrates between a donor and an acceptor, including keto-enol tautomerization"}},
+  {{"type": "electron_transfer", "subtype": "single_electron_transfer", "description": "Single electron moves from donor to acceptor"}},
+  {{"type": "radical", "subtype": "radical_initiation", "description": "Generation of radicals (e.g., by light, heat)"}},
+  {{"type": "radical", "subtype": "radical_propagation", "description": "Radical continuously generates new radicals"}},
+  {{"type": "radical", "subtype": "radical_termination", "description": "Two radicals combine to terminate chain reactions"}},
+  {{"type": "radical", "subtype": "radical_coupling", "description": "Two radicals form a new bond directly (e.g., C–C or C–N)"}},
+  {{"type": "pericyclic", "subtype": "cycloaddition", "description": "Two π-systems combine to form a ring (e.g., Diels–Alder)"}},
+  {{"type": "pericyclic", "subtype": "cycloreversion", "description": "The reverse reaction of cycloaddition"}},
+  {{"type": "pericyclic", "subtype": "electrocyclization", "description": "Ring closure or opening via conjugated π-system rotation"}},
+  {{"type": "pericyclic", "subtype": "sigmatropic_rearrangement", "description": "Migration of σ-bond across a π-system (e.g., [3,3]-Claisen)"}},
+  {{"type": "pericyclic", "subtype": "group_transfer", "description": "Group is transferred via concerted cyclic pathway"}},
+  {{"type": "pericyclic", "subtype": "ene_reaction", "description": "Transfer of an allylic hydrogen and formation of a new σ-bond"}},
+  {{"type": "pericyclic", "subtype": "cheletropic_reaction", "description": "Two new bonds formed to the same atom (subset of cycloaddition)"}},
+  {{"type": "cleavage", "subtype": "heterolytic_cleavage", "description": "Only used in SN1 and E1. Bond breaks with both electrons going to one fragment (ions formed), including decarboxylation in some condition"}},
+  {{"type": "cleavage", "subtype": "homolytic_cleavage", "description": "Only used in radical formation. Bond breaks evenly with one electron to each fragment (radicals formed)"}},
+  {{"type": "coordination", "subtype": "coordination", "description": "A ligand molecule attaches to a central metal atom. Lone pair coordinates with an empty orbital"}},
+  {{"type": "dissociation", "subtype": "dissociation", "description": "A ligand molecule detaches from a central metal atom"}}, 
+]
+
+### Output format:
+Return only the **valid JSON** in the format below.  
+Do not include any explanatory text, code blocks, markdown formatting, or any other content before or after the JSON!
+[
+  {{ "step": 1, "type": "...", "subtype": "...", "intermediate_smiles": "..." }},
+  ...
+]
+
+### Example
+
+**Input**:
+{
+  "reactants_smiles": ["CC=O", "CC=O"],
+  "products_smiles": ["CC(O)CC=O"],
+  "conditions": "Base"
+}
+
+**output**:
+[
+  {
+    "step": 1,
+    "type": "proton_transfer",
+    "subtype": "acid_base_proton_transfer",
+    "intermediate_smiles": "[CH2-]C=O"
+  },
+  {
+    "step": 2,
+    "type": "proton_transfer",
+    "subtype": "nucleophilic_addition",
+    "intermediate_smiles": "CC([O-])CC=O"
+  },
+  {
+    "step": 3,
+    "type": "proton_transfer",
+    "subtype": "acid_base_proton_transfer",
+    "intermediate_smiles": "CC(O)CC=O"
+  }
+]
+
+### Task for you
+
+**Input**:
+{
+  "reactants_smiles": "{ reactants_smiles }",
+  "products_smiles": "{ products_smiles }",
+  "conditions": "{ conditions }"
+}
+
+**output**:
