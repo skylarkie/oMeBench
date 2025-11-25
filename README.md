@@ -3,7 +3,6 @@
 **oMeBench** is a large-scale, expert-curated benchmark designed to evaluate large language models (LLMs) on **organic reaction mechanism reasoning** — a core challenge in chemical intelligence.  
 It provides standardized datasets, mechanistic annotations, and a dynamic evaluation framework (**oMeS**) that quantitatively measures model performance in stepwise causal reasoning, intermediate generation, and chemical validity.
 
----
 
 ## 🔬 Overview
 
@@ -39,7 +38,7 @@ oMeBench/
 |----------------|-------------|---------|----------|-------------|--------------|
 | **oMe-Gold** | 196 | 858 | 8 | 30 | Textbook-verified reactions with natural-language rationales |
 | **oMe-Template** | 167 | 722 | 8 | 30 | Generalized named-reaction templates (R-group placeholders) |
-| **oMe-Silver** | 2,508 | 10,619 | 8 | 30 | LLM-expanded dataset for large-scale training |
+| **oMe-Silver** | 2,493 | 10,541 | 8 | 30 | LLM-expanded dataset for large-scale training |
 
 Each reaction entry includes:
 ```json
