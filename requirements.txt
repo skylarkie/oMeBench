@@ -1,0 +1,8 @@
+accelerate
+huggingface_hub
+pandas
+peft
+rdkit
+torch
+tqdm
+transformers

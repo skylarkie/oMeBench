@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/
+test_result_cot/
+eval_result_cot/
+.cache/

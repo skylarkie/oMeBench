@@ -38,7 +38,7 @@ def clear_transformers_cache():
     # Clear module cache that may cause issues
     modules_dir = os.path.join(cache_dir, 'modules')
     if os.path.exists(modules_dir):
-        print(f"Clearing transformers modules cache: {modules_dir}")
+        print("Clearing transformers modules cache")
         try:
             shutil.rmtree(modules_dir)
             print("Cache cleared successfully!")
@@ -73,6 +73,14 @@ BASE_MODELS = {
 T5_MODELS = {
     "biot5",
 }
+
+
+def display_model_source(model_path: str) -> str:
+    """Return a public-safe model identifier for logs and result files."""
+    if is_huggingface_path(model_path):
+        return model_path
+    name = Path(model_path).expanduser().name
+    return f"local path ({name or 'model'})"
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Evaluate fine-tuned models on oMeBench")
@@ -124,6 +132,14 @@ def parse_args():
 
 # === Path Configuration ===
 ROOT = Path(__file__).resolve().parent.parent
+
+def display_repo_path(path: Path) -> str:
+    """Return a repository-relative path for logs when possible."""
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return path.name
+
 PROMPT_PATH = ROOT / "prompts" / "default.txt"
 INPUT_PATH = ROOT / "data" / "oMe_Gold.json"
 GOLD_PATH = ROOT / "data" / "oMe_Gold.json"
@@ -145,7 +161,7 @@ def detect_model_type(model_path: str):
 def load_model(model_path: str, model_name: str, clear_cache_first: bool = False):
     """Load model from specified path (supports both LoRA and full fine-tuning)"""
     print(f"Loading model: {model_name}")
-    print(f"Model path: {model_path}")
+    print(f"Model source: {display_model_source(model_path)}")
     
     # Check if it's a Hugging Face path
     is_hf_path = is_huggingface_path(model_path)
@@ -153,13 +169,13 @@ def load_model(model_path: str, model_name: str, clear_cache_first: bool = False
     if not is_hf_path:
         # Only check file existence for local paths
         if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Model path does not exist: {model_path}")
+            raise FileNotFoundError("Model path does not exist")
         
         # Check if key files exist
         config_files = ['config.json', 'pytorch_model.bin', 'model.safetensors']
         has_model_file = any(os.path.exists(os.path.join(model_path, f)) for f in config_files)
         if not has_model_file:
-            print(f"Warning: No standard model files found in {model_path}")
+            print(f"Warning: No standard model files found for {display_model_source(model_path)}")
             print(f"Available files: {os.listdir(model_path)}")
     else:
         print(f"Detected Hugging Face model path: {model_path}")
@@ -198,7 +214,7 @@ def load_lora_model(model_path: str, model_name: str):
     if not PEFT_AVAILABLE:
         raise ImportError("PEFT library is required for LoRA models. Install it with: pip install peft")
     
-    print(f"Loading LoRA model from: {model_path}")
+    print(f"Loading LoRA model from: {display_model_source(model_path)}")
     
     # Check if it's a Hugging Face path (LoRA typically requires local paths)
     if is_huggingface_path(model_path):
@@ -210,13 +226,17 @@ def load_lora_model(model_path: str, model_name: str):
     
     print(f"Base model: {base_model_name}")
     
-    # Check if there's a local base model path
-    local_base_path = "/work/hdd/bcei/yzhang66/huggingface/hub/models--allenai--OLMo-2-1124-13B-Instruct/snapshots/3a5c85baefbb1896a54d56fe2e76c0395627ddf4"
-    if local_base_path and os.path.exists(local_base_path):
-        print(f"Using local base model path: {local_base_path}")
-        actual_base_path = local_base_path
+    # Allow private local base-model locations through an environment variable
+    # instead of hard-coding machine-specific paths in the repository.
+    local_base_path = os.environ.get("OMEBENCH_BASE_MODEL_PATH")
+    if local_base_path:
+        local_base = Path(local_base_path).expanduser()
+        if not local_base.exists():
+            raise FileNotFoundError("OMEBENCH_BASE_MODEL_PATH does not exist")
+        print("Using base model from OMEBENCH_BASE_MODEL_PATH")
+        actual_base_path = str(local_base)
     else:
-        print(f"Using original base model path: {base_model_name}")
+        print(f"Using configured base model: {base_model_name}")
         actual_base_path = base_model_name
     
     # Load base model
@@ -225,7 +245,7 @@ def load_lora_model(model_path: str, model_name: str):
         actual_base_path,
         device_map="auto",
         trust_remote_code=True,
-        local_files_only=True,  # Use local files only if using local path
+        local_files_only=not is_huggingface_path(actual_base_path),
     )
     
     # Load LoRA adapter
@@ -240,7 +260,7 @@ def load_lora_model(model_path: str, model_name: str):
         tokenizer = AutoTokenizer.from_pretrained(
             actual_base_path, 
             trust_remote_code=True,
-            local_files_only=True
+            local_files_only=not is_huggingface_path(actual_base_path)
         )
     
     print(f"LoRA model '{model_name}' loaded successfully!")
@@ -248,7 +268,7 @@ def load_lora_model(model_path: str, model_name: str):
 
 def load_full_model(model_path: str, model_name: str):
     """Load full fine-tuned model or base model"""
-    print(f"Loading model from: {model_path}")
+    print(f"Loading model from: {display_model_source(model_path)}")
     
     # If it's a HF path and fully downloaded locally, resolve to snapshot path to avoid missing shard errors
     if is_huggingface_path(model_path):
@@ -256,11 +276,11 @@ def load_full_model(model_path: str, model_name: str):
         try:
             from huggingface_hub import snapshot_download
             local_snapshot = snapshot_download(model_path, local_files_only=True, ignore_patterns=["*.h5"], resume_download=False)
-            print(f"[Info] Using local snapshot for {model_path}: {local_snapshot}")
+            print(f"[Info] Using locally cached snapshot for {model_path}")
             model_path = local_snapshot
         except Exception as e:
             # If snapshot is incomplete, notify and abort (prevent hanging in offline environment)
-            raise RuntimeError(f"Local snapshot incomplete for {model_path}. Please download beforehand. Details: {e}")
+            raise RuntimeError(f"Local snapshot incomplete for {model_path}. Please download beforehand.") from e
 
     # Detect model type
     is_t5_model = model_name in T5_MODELS
@@ -364,9 +384,14 @@ def load_prompt_template(path: Path) -> str:
 
 # === Replace Template Variables ===
 def build_prompt(template: str, reactants, products, conditions):
-    return template.replace("{ reactants_smiles }", json.dumps(reactants)) \
-                   .replace("{ products_smiles }", json.dumps(products)) \
-                   .replace("{ conditions }", conditions)
+    replacements = {
+        "{ reactants_smiles }": json.dumps(reactants),
+        "{ products_smiles }": json.dumps(products),
+        "{ conditions }": json.dumps(conditions),
+    }
+    for token, value in replacements.items():
+        template = template.replace(token, value)
+    return template
 
 # === Detect Chat Template Support ===
 def supports_chat_template(tokenizer, model_name: str):
@@ -582,7 +607,7 @@ def generate_mechanisms(model, tokenizer, model_name: str, output_path: Path):
                 result = {
                     "reaction_id": rxn_id,
                     "input": reaction,
-                    "output": f"[Error] {e}"
+                    "output": "[Error] generation failed"
                 }
 
             fout.write(json.dumps(result) + "\n")
@@ -596,7 +621,7 @@ def evaluate_results(model_name: str, model_path: str, output_path: Path, eval_p
         gold_data = json.load(f)
 
     answer_map = {a["reaction_id"]: a["output"] for a in answers}
-    result = [{"model": model_name, "model_path": model_path, "total_predictions": len(answers)}]
+    result = [{"model": model_name, "model_path": display_model_source(model_path), "total_predictions": len(answers)}]
 
     total_evaluated = 0
     successful_evaluations = 0
@@ -670,7 +695,7 @@ def evaluate_results(model_name: str, model_path: str, output_path: Path, eval_p
     with open(eval_path, "w") as f:
         json.dump(result, f, indent=2)
 
-    print(f"Evaluation results saved to {eval_path}")
+    print(f"Evaluation results saved to {display_repo_path(eval_path)}")
     print(f"Model: {model_name}")
     print(f"Total reactions evaluated: {total_evaluated}")
     print(f"Successful evaluations: {successful_evaluations}")
@@ -718,10 +743,10 @@ def process_single_model(model_name: str, args):
         # Evaluate results
         evaluate_results(full_model_name, model_path, output_path, eval_path)
         
-        print(f"✅ Successfully completed evaluation for {full_model_name}")
+        print(f"[OK] Successfully completed evaluation for {full_model_name}")
         
     except Exception as e:
-        print(f"❌ Error processing {full_model_name}: {e}")
+        print(f"[Error] Processing failed for {full_model_name}: {type(e).__name__}")
         print(f"Skipping to next model...")
 
 # === Main Pipeline ===

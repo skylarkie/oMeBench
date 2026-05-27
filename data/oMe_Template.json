@@ -719,10 +719,8 @@
       "O[N]([*:5])([*:6])"
     ],
     "conditions": "$heating$",
-    "reaction_image_path": "/IMG/NR-000/reaction_cope.png",
     "mechnism_text_description": "The Cope elimination is a thermal intramolecular syn-stereospecific elimination of amine oxides yielding alkenes and N,N-dialkylhydroxylamines. The mechanism is concerted, involving a five-membered cyclic transition state where the oxygen of the amine oxide abstracts a $\\beta$-hydrogen. This proton abstraction, C=C double bond formation, and C-N bond cleavage (releasing N,N-dialkylhydroxylamine as the effective leaving group) occur simultaneously in a single step. While it's an elimination reaction, its concerted cyclic nature gives it pericyclic character, often compared to a [1,5]-sigmatropic hydrogen shift or an ene-like reaction.",
     "mechanism_step_nums": 1,
-    "mechanism_image_path": "/IMG/NR-000/mechanism_cope.png",
     "mechanism": [
       {
         "step": 1,
@@ -746,10 +744,8 @@
       "C([*:61])([*:62])C([*:11])([*:12])C([*:21])=C([*:31])([*:32])C([*:41])([*:42])=C([*:51])"
     ],
     "conditions": "heat",
-    "reaction_image_path": "/IMG/NR-000/reaction",
     "mechnism_text_description": "The Cope rearrangement is a thermally induced [3,3]-sigmatropic rearrangement of a 1,5-diene. It proceeds through a concerted, pericyclic mechanism involving a six-electron, six-membered cyclic transition state, often depicted in a chair-like conformation. In this reaction, a C-C sigma bond between positions 3 and 4 of the 1,5-diene system breaks, while a new C-C sigma bond forms between positions 1 and 6. Simultaneously, the pi bonds shift positions (from C1=C2 and C5=C6 to C2=C3 and C4=C5, using standard 1,5-diene numbering). For the specific substrate shown, this transformation results in a product where the phenyl and isopropyl groups, originally on adjacent carbons in the middle of the 1,5-diene chain, appear to have swapped their positions relative to the ethyl-substituted alkene and the terminal alkene.",
     "mechanism_step_nums": 1,
-    "mechanism_image_path": "/IMG/NR-000/mechanism",
     "mechanism": [
       {
         "step": 1,
@@ -773,10 +769,8 @@
       "[*:1]C#C"
     ],
     "conditions": "1. P(c1ccccc1)(c1ccccc1)c1ccccc1, C(Br)(Br)(Br)Br 2. [Li]CCCC",
-    "reaction_image_path": "/IMG/NR-000/reaction_Corey-Fuchs.png",
     "mechnism_text_description": "The Corey-Fuchs reaction is a two-step procedure for the conversion of aldehydes into terminal alkynes. In the first step, intermediate α,α-dibromoalkenes are prepared by the reaction of aldehydes with carbon tetrabromide and triphenylphosphine. In the second step, treatment with a strong base yields the terminal alkynes. The reaction was developed by Elias J. Corey and Philip L. Fuchs in 1972, building on the work Fausto Ramirez published in 1962.",
     "mechanism_step_nums": 9,
-    "mechanism_image_path": "/IMG/NR-000/mechanism_Corey-Fuchs.png",
     "mechanism": [
       {
         "step": 1,
@@ -866,10 +860,8 @@
       "C([*:1])([*:2])=O"
     ],
     "conditions": "Et3N",
-    "reaction_image_path": "/IMG/CoreyKim/reaction.png",
     "mechnism_text_description": "The depicted mechanism for the Corey-Kim oxidation of benzyl alcohol to benzaldehyde starts with the reaction of benzyl alcohol with an electrophilic chlorodimethylsulfonium species (formed from dimethyl sulfide and N-chlorosuccinimide, NCS).\nStep 1: The oxygen of benzyl alcohol performs a nucleophilic attack on the sulfur atom of the chlorodimethylsulfonium species (e.g., [CH3S(Cl)CH3]+), with chloride as the leaving group. This forms a protonated alkoxysulfonium ion intermediate (c1ccccc1C[O+H]S(C)C).\nStep 2: This intermediate is deprotonated at the oxygen by a base (e.g., the chloride ion displaced in Step 1 or triethylamine) to yield an alkoxysulfonium species where oxygen is neutral and sulfur is positively charged (c1ccccc1CO[S+](C)C).\nStep 3: Triethylamine (NEt3) then acts as a base to deprotonate the carbon alpha to the oxygen. This initiates an elimination process: the electrons from the C-H bond form a new C=O double bond, and concurrently, the C-O-S bond cleaves, with dimethyl sulfide (SMe2) departing as a leaving group, to yield benzaldehyde.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "/IMG/CoreyKim/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -918,10 +910,8 @@
       "[*:1]C(=O)O([*:2])"
     ],
     "conditions": "P(c1ccccc1)(c1ccccc1)c1ccccc1, c1cnccc1SSc1cncccc1",
-    "reaction_image_path": "/IMG/NR-000/reaction_image.png",
     "mechnism_text_description": "The Corey-Nicolaou macrolactonization involves the activation of a carboxylic acid ([*:1]-COOH) using triphenylphosphine (Ph3P) and 2,2'-dipyridyl disulfide (PySSPy), followed by esterification with an alcohol ([*:2]-OH).\nStep 1: Triphenylphosphine attacks 2,2'-dipyridyl disulfide, forming an activated phosphonium salt (Ph3P+-S-Py) and a thiopyridylate anion (PyS-).\nStep 2: The carboxylic acid reacts with the phosphonium salt (Ph3P+-S-Py), often facilitated by PyS- acting as a base, to form an S-pyridyl thioester ([*:1]-C(=O)-S-Py) and triphenylphosphine oxide or Ph3P depending on precise pathway depiction.\nStep 3: The alcohol ([*:2]-OH) performs a nucleophilic attack on the carbonyl carbon of the S-pyridyl thioester. The nitrogen of the pyridyl group assists by deprotonating the attacking alcohol, leading to a zwitterionic tetrahedral intermediate where the pyridyl nitrogen is protonated.\nStep 4: The tetrahedral intermediate collapses, ejecting 2-pyridinethiol (PySH, which can tautomerize to 2-thiopyridone) as a leaving group, to yield the final ester product ([*:1]-C(=O)-O[*:2]).",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "/IMG/NR-000/mechanism_image.png",
     "mechanism": [
       {
         "step": 1,
@@ -970,10 +960,8 @@
       "S([*:1])C([*:2])(C(O)([*:3])([*:4]))S([*:1])"
     ],
     "conditions": "1) n-BuLi 2) Benzaldehyde 3) H3O+ workup",
-    "reaction_image_path": "/IMG/NR-000/reaction.png",
     "mechnism_text_description": "The mechanism begins with the deprotonation of 2-ethyl-1,3-dithiane (CCC1SCCS1) at the C2 position by n-butyllithium (n-BuLi), forming a nucleophilic lithiated dithiane carbanion. This carbanion then undergoes nucleophilic addition to the electrophilic carbonyl carbon of benzaldehyde (O=Cc1ccccc1), generating a lithium alkoxide intermediate. Finally, protonation of this alkoxide by an acidic workup (e.g., H3O+) yields the final product, 2-ethyl-2-(hydroxy(phenyl)methyl)-1,3-dithiane.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "/IMG/NR-000/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1013,10 +1001,8 @@
       "C([*:1])([*:2])([*:3])N=C=O"
     ],
     "conditions": "Heat",
-    "reaction_image_path": "/IMG/NR-000/reaction.png",
     "mechnism_text_description": "The Curtius rearrangement is the thermal decomposition of an acyl azide to form an isocyanate with the loss of nitrogen gas (N2). The reaction typically proceeds via a concerted mechanism where the alkyl or aryl group (R) attached to the carbonyl carbon migrates to the nitrogen atom simultaneously with the expulsion of dinitrogen. This migration results in the formation of an isocyanate.",
     "mechanism_step_nums": 1,
-    "mechanism_image_path": "/IMG/NR-000/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1041,10 +1027,8 @@
       "Oc1c([*:1])cc([*:2])c([*:3])c1([*:4])"
     ],
     "conditions": "Aqueous Base (e.g. [OH-]), then Acid (e.g. HCl for workup)",
-    "reaction_image_path": "/IMG/NR-000/reaction.png",
     "mechnism_text_description": "The Dakin oxidation is the reaction between electron-rich aromatic aldehydes and hydrogen peroxide yielding phenols. It is a variant of the Baeyer-Villiger oxidation. The reaction was first described by Henry Drysdale Dakin in 1899.",
     "mechanism_step_nums": 5,
-    "mechanism_image_path": "/IMG/NR-000/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1101,10 +1085,8 @@
       "C([*:3])C(=O)[CH]([*:1])([*:2])"
     ],
     "conditions": "CCN(CC)CC",
-    "reaction_image_path": "/IMG/NR-003/reaction.png",
     "mechnism_text_description": "Triethylamine deprotonates isobutyric acid to form the isobutyrate anion. The isobutyrate anion then attacks propanoic anhydride in a nucleophilic addition, yielding a tetrahedral intermediate. This intermediate collapses, eliminating propanoate anion and forming a mixed anhydride (isobutyric propanoic anhydride). Triethylamine then deprotonates the alpha-carbon of the isobutyric acid portion of the mixed anhydride, generating an O-enolate. This O-enolate undergoes a [3,3]-sigmatropic rearrangement to form a beta-keto carboxylate anion. The beta-keto carboxylate anion then undergoes rapid decarboxylation (heterolytic cleavage losing CO2) to yield the enolate of the final ketone product (3-methyl-2-pentanone enolate). Finally, this ketone enolate is protonated by the triethylammonium ion (formed in the deprotonation steps) to yield 3-methyl-2-pentanone.",
     "mechanism_step_nums": 10,
-    "mechanism_image_path": "/IMG/NR-003/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1201,10 +1183,8 @@
       "c1([*:1])c([*:5])c(O)c([*:4])c(EDG)c1([*:2])"
     ],
     "conditions": "Δ (Heat)",
-    "reaction_image_path": "NR-056/reaction.png",
     "mechnism_text_description": "The Danheiser benzannulation is the reaction between cyclobutenones and alkynes yielding highly-substituted phenols. One pathway involves an initial thermal electrocyclic ring opening of the cyclobutenone to form a vinylketene. This vinylketene then undergoes a [2+2] cycloaddition with the alkyne to yield a vinylcyclobutenone intermediate. This vinylcyclobutenone subsequently undergoes a thermal electrocyclic rearrangement (which can be a cascade involving ring opening of the cyclobutene followed by 6pi closure of the resulting dienylketene) to form a cyclohexadienone intermediate. This cyclohexadienone finally tautomerizes to the aromatic phenol product. For the generalized example: the cyclobutenone O=C1C([*:5])C([*:1])=C([*:2])C1 (leading to vinylketene C([*:5])=C([*:1])C([*:2])=C=O) reacts with alkyne (EDG)C#C([*:4]). The vinylketene undergoes a [2+2] cycloaddition with the alkyne to give a vinylcyclobutenone. This intermediate then undergoes an electrocyclic rearrangement to yield a dienylketene, which then undergoes 6pi electrocyclization to a cyclohexadienone, which tautomerizes to the final product, ([*:1])c1c([*:5])c(O)c([*:4])c(EDG)c1([*:2]).",
     "mechanism_step_nums": 5,
-    "mechanism_image_path": "NR-056/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1300,10 +1280,8 @@
       "C([*:1])([*:2])=O"
     ],
     "conditions": "CH2Cl2 or other aprotic solvent (often implied, not explicitly stated in image)",
-    "reaction_image_path": "/IMG/NR-000/reaction_dess_martin.png",
     "mechnism_text_description": "The Dess-Martin oxidation converts primary alcohols (like benzyl alcohol shown in the mechanism detail) to aldehydes, or secondary alcohols to ketones, using Dess-Martin Periodinane (DMP). The mechanism begins with a ligand exchange reaction (Step 1): the alcohol (benzyl alcohol) displaces an acetate ligand on the hypervalent iodine atom of DMP, forming an alkoxyperiodinane intermediate and releasing acetic acid. In the second step (Step 2), another acetate molecule (or another base present) abstracts a proton from the carbon atom bearing the alkoxy group (the benzylic proton in this case). This initiates a concerted elimination: the C-H bond electrons form the new carbon-oxygen double bond (aldehyde carbonyl), and simultaneously the bond between the oxygen and the iodine atom breaks, transferring electrons to the iodine. This step releases the aldehyde product (benzaldehyde) and the reduced form of the periodinane (a 1,2-benziodoxol-3(1H)-one derivative).",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "/IMG/NR-000/mechanism_dess_martin.png",
     "mechanism": [
       {
         "step": 1,
@@ -1343,10 +1321,8 @@
       "O([*:1])C(=O)C1CCCC1=O"
     ],
     "conditions": "Base",
-    "reaction_image_path": "/IMG/NR-000/reaction",
     "mechnism_text_description": "The Dieckmann condensation is the intramolecular reaction of diesters using strong bases yielding cyclic β-keto esters. It is the intramolecular variant of the Claisen condensation.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "/IMG/NR-000/mechanism",
     "mechanism": [
       {
         "step": 1,
@@ -1387,10 +1363,8 @@
       "c1([*:5])nc2c(([*:4]))c(([*:2]))c(([*:1]))c(([*:3]))c2c(([*:7]))c1([*:6])"
     ],
     "conditions": "Acid, [O]",
-    "reaction_image_path": "/IMG/NR-000/image_6bdb87_reaction.png",
     "mechnism_text_description": "The Doebner-Miller reaction is the acid-catalyzed aerobic reaction between anilines and α,β-unsaturated carbonyl compounds yielding quinolines. The reaction is named after Oscar Döbner and Wilhelm von Miller who first described it in 1881.",
     "mechanism_step_nums": 7,
-    "mechanism_image_path": "/IMG/NR-000/image_6bdb87_mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1463,10 +1437,8 @@
       "C([*:1])([*:2])=C([*:3])C([*:4])([*:5])C([*:6])([*:7])C(H)([*:8])([*:9])"
     ],
     "conditions": "heat",
-    "reaction_image_path": "/IMG/NR-000/reaction_scheme_from_image",
     "mechnism_text_description": "The Ene reaction is a pericyclic process involving an alkene with an allylic hydrogen (the 'ene') and a compound with a multiple bond (the 'enophile'). The reaction proceeds via a single, concerted, six-membered transition state. An allylic hydrogen from the ene is transferred to one of the sp2 carbons of the enophile. Simultaneously, a new carbon-carbon sigma bond forms between the allylic carbon of the ene and the other sp2 carbon of the enophile, while the pi-bond of the ene migrates.",
     "mechanism_step_nums": 1,
-    "mechanism_image_path": "/IMG/NR-000/mechanism_detail_from_image",
     "mechanism": [
       {
         "step": 1,
@@ -1490,10 +1462,8 @@
       "OC([*:1])([*:2])C([*:3])=C([*:4])([*:5])"
     ],
     "conditions": "P(OR)3",
-    "reaction_image_path": "/IMG/NR-000/reaction",
     "mechnism_text_description": "The reaction proceeds via a [2,3]-sigmatropic rearrangement of the allylic sulfoxide to form an allylic sulfenate ester intermediate. This intermediate is then trapped by a thiophilic reagent, trialkyl phosphite, which attacks the sulfur atom. This attack results in the cleavage of the S-O bond to form an alkoxide. Subsequent protonation of the alkoxide yields the final allylic alcohol product.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "/IMG/NR-000/mechanism",
     "mechanism": [
       {
         "step": 1,
@@ -1534,10 +1504,8 @@
       "O([*:5])C(=O)C1([*:1])([*:2])CCCCC1([*:3])"
     ],
     "conditions": "[*:5]O",
-    "reaction_image_path": "NR-000/reaction.png",
     "mechnism_text_description": "The Favorskii rearrangement begins with the abstraction of an alpha-proton by a hydroxide base to form an enolate. The enolate then undergoes an intramolecular nucleophilic substitution to displace the chloride, forming a bicyclo[4.1.0]heptan-7-one (a cyclopropanone) intermediate. Hydroxide then attacks the carbonyl carbon of this strained intermediate in a nucleophilic addition. The resulting tetrahedral intermediate collapses, leading to the cleavage of the carbon-carbon bond of the original ring. This ring contraction forms a cyclopentyl carbanion intermediate. This carbanion is rapidly protonated by a water molecule. Finally, a concluding protonation step converts the carboxylate salt into the final cyclopentanecarboxylic acid product.",
     "mechanism_step_nums": 5,
-    "mechanism_image_path": "NR-000/mechanism.png",
     "mechanism": [
       {
         "step": 1,
@@ -1593,10 +1561,8 @@
       "C([*:1])#C([*:2])"
     ],
     "conditions": "Base (e.g., LDA)",
-    "reaction_image_path": "image_881dd8.png",
     "mechnism_text_description": "The Fritsch-Buttenberg-Wiechell rearrangement begins with the deprotonation of the vinylic hydrogen by a strong base, forming a vinyl anion. This is followed by an α-elimination of the halide, which generates a vinyl carbene intermediate. The final step involves a 1,2-migration of one of the R groups, leading to the formation of the alkyne product.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "image_881dd8.png",
     "mechanism": [
       {
         "step": 1,
@@ -1687,7 +1653,6 @@
       "C12CCCCC1=CC(=O)CC2"
     ],
     "conditions": "1. Ether solvent 2. H3O+ workup",
-    "reaction_image_path": "NR-000/reaction.png",
     "mechnism_text_description": "The reaction sequence begins with the Fujimoto-Belleau reaction, a 1,4-conjugate nucleophilic addition of a Grignard reagent to an enol lactone. The resulting magnesium enolate is protonated during acidic workup and tautomerizes to a stable saturated lactone. This lactone then serves as a precursor for an intramolecular aldol condensation (a Robinson annulation). Under basic or thermal conditions, the lactone is believed to open to an intermediate keto-acid, which then cyclizes to form a β-hydroxy ketone. The final step is a dehydration of this aldol adduct to yield the thermodynamically stable α,β-unsaturated ketone.",
     "mechanism_step_nums": 6,
     "mechanism": [
@@ -1748,10 +1713,8 @@
       "C(=O)([*:1])([*:2])"
     ],
     "conditions": "",
-    "reaction_image_path": "/IMG/NR-000/reaction",
     "mechnism_text_description": "The Ganem oxidation is the oxidation of benzylic or allylic halides to aldehydes or ketones. The mechanism begins with the nucleophilic oxygen of the trialkylamine N-oxide attacking the electrophilic carbon of the halide in an SN2 reaction, displacing the halide and forming an alkoxyammonium salt intermediate. In the second step, a base (like triethylamine, which can be a byproduct) abstracts an alpha-proton, leading to an E2 elimination. This forms a carbon-oxygen double bond and expels triethylamine as a leaving group, resulting in the final carbonyl compound.",
     "mechanism_step_nums": 2,
-    "mechanism_image_path": "/IMG/NR-000/mechanism",
     "mechanism": [
       {
         "step": 1,
@@ -4056,10 +4019,8 @@
       "C([*:2])C1=CC(=O)CC1([*:1])"
     ],
     "conditions": "H+ OSO2Me",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The reaction initiates with the protonation of the divinyl ketone's carbonyl oxygen by a strong acid. This forms a resonance-stabilized oxyallyl cation, which then undergoes a 4π-electron electrocyclic ring closure to form a cyclopentenyl cation intermediate. The reaction concludes with a deprotonation and subsequent keto-enol tautomerization to yield the final cyclopentenone product.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4107,10 +4068,8 @@
       "[*:3]C(=O)C([*:1])([*:2])N"
     ],
     "conditions": "Base, H2O",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Neber rearrangement is an intramolecular nucleophilic substitution reaction. It begins with the abstraction of an alpha-proton by a base, followed by the intramolecular cyclization of the intermediate to form an azirine ring, displacing the tosylate group. The azirine intermediate is then hydrolyzed by water, and a series of proton transfers and a final rearrangement leads to the alpha-amino ketone product.",
     "mechanism_step_nums": 6,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4247,10 +4206,8 @@
       "C1=C(O)C=CC2=C1C(C(=O)[*:3])=CN([*:2])2"
     ],
     "conditions": "Acetic acid",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Nenitzescu indole synthesis is a chemical reaction that produces 5-hydroxyindoles from 1,4-benzoquinone and a β-aminocrotonate. The reaction proceeds through a Michael addition, followed by cyclization and elimination.",
     "mechanism_step_nums": 7,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4375,10 +4332,8 @@
     ],
     "products_smiles": "OC([*:1])([*:2]).C([*:3])(=O)[*:4]",
     "conditions": "Al(Oi-Pr)3",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Oppenauer oxidation is a chemical reaction that oxidizes secondary alcohols to ketones or primary alcohols to aldehydes. It is the reverse of the Meerwein–Ponndorf–Verley reduction. The reaction is driven by the formation of a more stable carbonyl compound. The mechanism involves the coordination of the alcohol to the aluminum catalyst, followed by hydride transfer and product release.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4422,10 +4377,8 @@
     "reactants_smiles": "C([*:1])=C([*:2])C([*:3])([*:4])OC=N",
     "products_smiles": "C(=O)NC([*:1])C([*:2])=C([*:3])([*:4])",
     "conditions": "None",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Overman rearrangement is a sigmatropic rearrangement reaction in which an allylic imidate is converted to an allylic trichloroacetamide. The reaction proceeds via a concerted [3,3]-sigmatropic rearrangement. This is a powerful method for the synthesis of complex allylic amines from allylic alcohols.",
     "mechanism_step_nums": 1,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4680,10 +4633,8 @@
     "reactants_smiles": "C12C(CCCC1([*:1])O)O2",
     "products_smiles": "C12C(CCCC1([*:1])O2)O",
     "conditions": "Acid-catalyzed",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Payne rearrangement is an acid- or base-catalyzed isomerization of an epoxy alcohol. The acid-catalyzed mechanism shown here begins with the protonation of the epoxide oxygen. This activation makes the epoxide carbon more electrophilic. The neighboring hydroxyl group then acts as an intramolecular nucleophile, attacking the activated epoxide and opening the original ring while simultaneously forming a new, rearranged epoxide ring. The final step is deprotonation of the intermediate to yield the neutral, rearranged epoxy alcohol product.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4787,10 +4738,8 @@
     ],
     "products_smiles": "C1C(C)(C)C(=O)CCO1",
     "conditions": "Me2AlCl",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Petasis-Ferrier rearrangement is a Lewis acid-catalyzed reaction that transforms an α,β-unsaturated ketone into a γ,δ-unsaturated ketone. The mechanism is initiated by the coordination of the ketone's oxygen atom with a Lewis acid, such as dimethylaluminum chloride (Me₂AlCl). This coordination activates the system for a concerted rearrangement where a methyl group from the Lewis acid migrates to the α-carbon of the original ketone. The rearrangement proceeds through a cyclic transition state, leading to a new C-C bond and a shift of the double bond. The final step is the dissociation of the Lewis acid, reforming the carbonyl group and yielding the rearranged product.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -4857,10 +4806,8 @@
       "C1(C([*:1])(C(NC(C([*:1])1C(OCC)=O)(C[*:2]))(C[*:2]))C(OCC)=O)=O"
     ],
     "conditions": "acid",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Petrenko-Kritschenko Piperidone Synthesis is a multi-component reaction involving a $\\beta$-keto ester, an aldehyde, and ammonia. The mechanism proceeds in a series of Mannich reactions and an imine condensation to form a piperidone ring. In the first step, ammonia and an aldehyde condense to form an imine. This is followed by a Mannich reaction where the enolate of the $\\beta$-keto ester attacks the iminium ion. The resulting intermediate then undergoes another imine condensation and subsequent intramolecular Mannich reaction to form the final piperidone product.",
     "mechanism_step_nums": 3,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -5103,10 +5050,8 @@
       "C([*:1])(=[NH2+])OCC"
     ],
     "conditions": "HCl, EtOH",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Pinner reaction is an organic reaction between a nitrile and an alcohol in the presence of an acid catalyst (like HCl) to form an imino ester (or Pinner salt). The reaction proceeds through a series of proton transfers, nucleophilic additions, and eliminations. First, the nitrogen atom of the nitrile is protonated by the acid. The alcohol then acts as a nucleophile, attacking the electrophilic carbon of the protonated nitrile. A subsequent proton transfer step generates a new intermediate, which, upon loss of a proton and a leaving group (ammonia in some variants, though not explicitly shown in this mechanism), leads to the final imino ester product.",
     "mechanism_step_nums": 7,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -5179,10 +5124,8 @@
       "C([*:1])C(=O)O"
     ],
     "conditions": "NaH2PO4, t-BuOH, 2-methyl-2-butene",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Pinnick-Lindgren oxidation converts an aldehyde to a carboxylic acid using sodium chlorite. The reaction is believed to proceed through a nucleophilic attack of the chlorite ion on the carbonyl carbon of the aldehyde. This is followed by a rearrangement and a ring-closing step to form a cyclic intermediate. The final product, the carboxylic acid, is generated upon a ring-opening and elimination of HClO. The phosphate buffer and a chlorine scavenger (like 2-methyl-2-butene) are often used to improve the yield and selectivity of the reaction.",
     "mechanism_step_nums": 2,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -5371,10 +5314,8 @@
     ],
     "products_smiles": "O=C(C)OC([*:1])S([*:2])",
     "conditions": "Acetic anhydride",
-    "reaction_image_path": "a relative address",
     "mechnism_text_description": "The Pummerer rearrangement is a reaction that transforms an alkyl sulfoxide into an α-acyloxy sulfide. The reaction is initiated by the protonation of the sulfoxide oxygen by a strong acid or activation with an electrophile. The intermediate formed is an oxysulfonium salt, which is then attacked by a nucleophile, usually the conjugate base of the acid used for activation. The final product is formed through a rearrangement and a deprotonation step.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "a relative address",
     "mechanism": [
       {
         "step": 1,
@@ -5477,10 +5418,8 @@
       "[*:1]N(c1ccc([*:4])cc1)C(=O)C([*:2])([*:3])O"
     ],
     "conditions": "CCO",
-    "reaction_image_path": "f52b5b2483955fc4f281161cd025ad75.png",
     "mechnism_text_description": "The Smiles rearrangement is an intramolecular nucleophilic aromatic substitution reaction. The mechanism is initiated by a base-catalyzed deprotonation of a nucleophilic group (here, an amide), creating an anion. This anion then performs an intramolecular nucleophilic attack on the electron-deficient aromatic ring, forming a spirocyclic Meisenheimer complex. This intermediate is unstable and collapses by cleaving the bond between the aromatic ring and the original linking atom (an ether oxygen), which restores aromaticity. The resulting alkoxide is then protonated in the final step to yield the rearranged product. Note: The mechanism shown leads to a hydroxyacetamide product, while the final structure drawn in the image appears to be a carboxylic acid, which would require a subsequent hydrolysis step not depicted.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "f52b5b2483955fc4f281161cd025ad75.png",
     "mechanism": [
       {
         "step": 1,
@@ -5529,10 +5468,8 @@
       "[*:1]C([*:2])=O"
     ],
     "conditions": "H2O",
-    "reaction_image_path": "image_4adc66.png",
     "mechnism_text_description": "The reaction initiates with the nucleophilic attack of hexamine on the benzylic bromide, forming a quaternary ammonium salt. This salt then undergoes a [2,3]-sigmatropic rearrangement (a process related to the Sommelet-Hauser rearrangement) to form an iminium ion. The final stage is the hydrolysis of this iminium ion, which involves the nucleophilic addition of water to form a carbinolamine intermediate, followed by the elimination of an amine to yield the final aldehyde product.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "image_4adc66.png",
     "mechanism": [
       {
         "step": 1,
@@ -5582,10 +5519,8 @@
       "O=P([*:2])([*:3])([*:4])"
     ],
     "conditions": "H2O",
-    "reaction_image_path": "image_1289aa.png",
     "mechnism_text_description": "The Staudinger reaction converts an organic azide into a primary amine using a phosphine, typically triphenylphosphine. The mechanism is initiated by the nucleophilic attack of the phosphine on the terminal nitrogen of the azide, forming a phosphazide intermediate. This intermediate undergoes cyclization to a four-membered phosphatriazene ring, which is unstable and collapses to eliminate dinitrogen gas (N2), yielding an iminophosphorane. Subsequent hydrolysis of the iminophosphorane, involving protonation and nucleophilic attack by water, leads to the formation of the final amine product and phosphine oxide as a byproduct.",
     "mechanism_step_nums": 6,
-    "mechanism_image_path": "image_1289aa.png",
     "mechanism": [
       {
         "step": 1,
@@ -5652,10 +5587,8 @@
       "[*:2]OC(=O)[*:1]"
     ],
     "conditions": "",
-    "reaction_image_path": "image_128d4c.png",
     "mechnism_text_description": "The Steglich esterification is a mild method for forming esters from carboxylic acids and alcohols using dicyclohexylcarbodiimide (DCC) as a coupling agent and a catalyst like 4-dimethylaminopyridine (DMAP). The mechanism begins with the carboxylic acid adding to the DCC to form a highly reactive O-acylisourea intermediate. The DMAP catalyst then attacks this intermediate to form an N-acylpyridinium ion, which is even more reactive. Finally, the alcohol attacks this activated species, and the subsequent collapse of the tetrahedral intermediate yields the desired ester and regenerates the DMAP catalyst.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "image_128d4c.png",
     "mechanism": [
       {
         "step": 1,
@@ -5705,10 +5638,8 @@
       "[*:2]C(=O)C([*:4])C([*:3])C(=O)[*:1]"
     ],
     "conditions": "",
-    "reaction_image_path": "image_129147.png",
     "mechnism_text_description": "The Stetter reaction is a nucleophilic-catalyst-mediated process for forming 1,4-dicarbonyl compounds. The mechanism is initiated by the nucleophilic attack of the catalyst (e.g., cyanide or a thiazolium ylide) on an aldehyde, leading to a cyanohydrin anion. A proton transfer generates the key nucleophilic Breslow intermediate. This intermediate then undergoes a conjugate addition (Michael addition) to an α,β-unsaturated acceptor. A final sequence of proton transfer and catalyst elimination yields an enol, which tautomerizes to the stable 1,4-dicarbonyl product.",
     "mechanism_step_nums": 5,
-    "mechanism_image_path": "image_129147.png",
     "mechanism": [
       {
         "step": 1,
@@ -5765,10 +5696,8 @@
       "[*:1]C(=O)C([*:2])([*:5])N([*:3])([*:4])"
     ],
     "conditions": "",
-    "reaction_image_path": "image_12954b.png",
     "mechnism_text_description": "The Stevens rearrangement is the conversion of a quaternary ammonium salt to a tertiary amine, initiated by a strong base. In this variant, a base like lithium diisopropylamide (LDA) deprotonates the carbon positioned between the carbonyl and the ammonium group, generating a nitrogen ylide intermediate. This ylide then undergoes a concerted [1,2]-sigmatropic shift, where one of the alkyl groups (here, a benzyl group) migrates from the nitrogen to the adjacent carbanionic carbon. This rearrangement step forms the final, more stable tertiary amine product.",
     "mechanism_step_nums": 2,
-    "mechanism_image_path": "image_12954b.png",
     "mechanism": [
       {
         "step": 1,
@@ -5802,10 +5731,8 @@
       "[*:1]/C=C\\C(=O)O[*:2]"
     ],
     "conditions": "",
-    "reaction_image_path": "image_12988e.png",
     "mechnism_text_description": "The Still-Gennari reaction is a stereoselective variation of the Horner-Wadsworth-Emmons reaction that preferentially forms (Z)-alkenes. It employs a phosphonate reagent bearing electron-withdrawing groups (like trifluoroethoxy) and a strong, non-nucleophilic base. The mechanism starts with the base deprotonating the phosphonate reagent to create a nucleophilic carbanion. This carbanion adds to an aldehyde, forming a tetrahedral alkoxide intermediate. The key to (Z)-selectivity is the rapid, irreversible cyclization of this intermediate to an oxaphosphetane, which then quickly collapses to eliminate a phosphate byproduct and give the (Z)-alkene.",
     "mechanism_step_nums": 4,
-    "mechanism_image_path": "image_12988e.png",
     "mechanism": [
       {
         "step": 1,
